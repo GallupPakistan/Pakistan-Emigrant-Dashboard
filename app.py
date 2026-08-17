@@ -166,7 +166,7 @@ ACCENT = "#64b4ff"
 @st.cache_data
 def load_profession_data():
     df = pd.read_csv(
-        "number-of-pakistani-emigrants-profession-wise-1981-2024.csv",
+        "number-of-pakistani-emigrants-profession-wise-1981-2026.csv",
         header=None,
         names=["Profession", "Year", "Count"],
         encoding="utf-8-sig",
@@ -185,7 +185,7 @@ def load_profession_data():
 @st.cache_data
 def load_country_data():
     df = pd.read_csv(
-        "number-of-pakistani-emigrants-country-wise-1981-2024.csv",
+        "number-of-pakistani-emigrants-country-wise-1981-2026.csv",
         encoding="utf-8-sig",
     )
     df.columns = df.columns.str.strip()
@@ -219,7 +219,7 @@ with st.sidebar:
         "Year Range",
         min_value=int(min(all_years)),
         max_value=int(max(all_years)),
-        value=(1981, 2024),
+        value=(1981, 2026),
         step=1,
     )
 
@@ -254,7 +254,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown(
-        "<small style='color:#556'>Data source: Bureau of Emigration & Overseas Employment, Pakistan · 1981–2024</small>",
+        "<small style='color:#556'>Data source: Bureau of Emigration & Overseas Employment, Pakistan · 1981–2026</small>",
         unsafe_allow_html=True,
     )
 
@@ -276,7 +276,7 @@ top_country_count = dffc.groupby("Country")["Count"].sum().max()
 st.markdown(f"""
 <div class="hero-header">
   <h1>🌍 Pakistani Emigration Dashboard</h1>
-  <p>Profession-wise &amp; Country-wise emigration trends · 1981–2024 &nbsp;·&nbsp; Bureau of Emigration &amp; Overseas Employment</p>
+  <p>Profession-wise &amp; Country-wise emigration trends · 1981–2026 &nbsp;·&nbsp; Bureau of Emigration &amp; Overseas Employment</p>
 </div>
 """, unsafe_allow_html=True)
 
